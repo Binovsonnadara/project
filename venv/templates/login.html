@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% block title %}Log In{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('login') }}" method="post">
+    <body ><br><br>
+        <main class="container d-flex flex-wrap py-4 justify-content-center align-items-center">
+            <div class="col-8 col-lg-5 col-md mb-4 me-4 image_wrapper">
+                <img src="./static/cat.jpg" alt="">
+            </div>
+            <div class="col-10 col-md-5 col-xl-4 form_wrapper">
+                <div class="logo h1">Carbon Footprint Calculator</div>
+                <h2>Welcome Back! 👋</h2>
+                <p>Please login with your data that you entered during registeration.</p>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="loginInputName" class="mb-1">Name</label>
+                        <input type="name" class="form-control" id="loginInputName" placeholder="Name", name="name" autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginInputPassword" class="mb-1">Password</label>
+                        <input type="password" class="form-control" id="loginInputPassword" placeholder="your password", name="password" required>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="col-8 btn btn-primary">Login</button>
+                        <script>
+                            function openStreamlitApp() {
+                                var streamlitAppUrl = 'http://localhost:8501';
+                                window.open(streamlitAppUrl);
+                            }
+                        </script>
+                        <button type="submit" class="col btn btn-outline-primary" onclick="window.location.href='/signup'">Register</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</form>
+{% endblock %}

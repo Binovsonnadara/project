@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{{ url_for('signup') }}" method="post">
+    <body ><br><br>
+        <main class="container d-flex flex-wrap py-4 justify-content-center align-items-center">
+            <div class="col-8 col-lg-5 col-md mb-4 me-4 image_wrapper">
+                <img src="./static/cat.jpg" alt="">
+            </div>
+            <div class="col-10 col-md-5 col-xl-4 form_wrapper">
+                <div class="logo h1">Carbon Footprint Calculator</div>
+                <h2>Welcome! 🌳</h2>
+                <p>Sign up to join our system!</p>
+                <form action="/signup" method="post">
+                    <div class="mb-3">
+                        <label for="signupInputName" class="mb-1">Name</label>
+                        <input type="text" class="form-control" id="signupInputName" placeholder="Your Name" name="name" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupInputEmail" class="mb-1">Email Address</label>
+                        <input type="email" class="form-control" id="signupInputEmail" placeholder="email@example.com" name="email" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupInputPassword" class="mb-1">Password</label>
+                        <input type="password" class="form-control" id="signupInputPassword" placeholder="Your Password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupInputConfirmPassword" class="mb-1">Confirm Password</label>
+                        <input type="password" class="form-control" id="signupInputConfirmPassword" placeholder="Confirm Password" name="confirmpassword">
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="col-8 btn btn-primary">Signup</button>
+                        <button type="submit" class="col btn btn-outline-primary" onclick="window.location.href='/login'">Login</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</form>
+{% endblock %}
